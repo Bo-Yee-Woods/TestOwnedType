@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TestOwnedType.Cases.One;
+using TestOwnedType.Cases.Three;
 
 namespace TestOwnedType.Cases
 {

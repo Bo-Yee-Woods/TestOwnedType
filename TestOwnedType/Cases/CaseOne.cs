@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace TestOwnedType.Cases
+namespace TestOwnedType.Cases.One
 {
     public class MyEntityConfiguration
         : IEntityTypeConfiguration<MyEntity>

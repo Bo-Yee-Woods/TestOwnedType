@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace TestOwnedType.Cases.Two
+namespace TestOwnedType.Cases.Three
 {
+
     public class PaymentRecordEntityConfiguration
         : IEntityTypeConfiguration<PaymentRecordEntity>
     {
@@ -16,6 +17,8 @@ namespace TestOwnedType.Cases.Two
                 paymentRecordEntity => paymentRecordEntity.ComputedStampDuty,
                 computedStampDuty =>
                 {
+                    // 1. must explicitly declare all property here
+                    computedStampDuty.Property(csd => csd.PropertyType);
                     computedStampDuty.Property(csd => csd.BuyersStampDuty);
                     computedStampDuty.Property(csd => csd.AdditionalBuyersStampDuty);
                     computedStampDuty.Ignore(csd => csd.TotalAmountPayable);
@@ -43,11 +46,15 @@ namespace TestOwnedType.Cases.Two
 
         public string DocumentRefNo => _documentRefNo;
 
-        public ComputedStampDuty ComputedStampDuty { get; private set; }
+        // 2. must have a public setter for owned property type
+        public ComputedStampDuty ComputedStampDuty { get; set; }
     }
+
 
     public class ComputedStampDuty
     {
+        // 3. cannot have empty constructor in owned type
+        // 4.  constructor must have parameters mapping all property type
         // private ComputedStampDuty() { }
 
         public ComputedStampDuty(string propertyType, double buyersStampDuty, double additionalBuyersStampDuty)
@@ -65,4 +72,6 @@ namespace TestOwnedType.Cases.Two
 
         public double TotalAmountPayable => BuyersStampDuty + AdditionalBuyersStampDuty;
     }
+
+
 }
