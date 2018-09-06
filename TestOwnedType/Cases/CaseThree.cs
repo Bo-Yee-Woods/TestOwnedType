@@ -46,8 +46,8 @@ namespace TestOwnedType.Cases.Three
 
         public string DocumentRefNo => _documentRefNo;
 
-        // 2. must have a public setter for owned property type
-        public ComputedStampDuty ComputedStampDuty { get; set; }
+        // 2. the backing field must be read-writable
+        public ComputedStampDuty ComputedStampDuty { get; private set; }
     }
 
 
