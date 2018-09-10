@@ -10,8 +10,8 @@ using TestOwnedType.Cases;
 namespace TestOwnedType.Migrations
 {
     [DbContext(typeof(MyDbContext))]
-    [Migration("20180906091755_Initial")]
-    partial class Initial
+    [Migration("20180910021731_AddCaseThree")]
+    partial class AddCaseThree
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -87,7 +87,9 @@ namespace TestOwnedType.Migrations
 
                             b1.Property<double>("BuyersStampDuty");
 
-                            b1.Property<string>("PropertyType");
+                            b1.Property<int>("PropertyType");
+
+                            b1.Property<DateTime>("SubmitedAt");
 
                             b1.ToTable("PaymentRecords");
 

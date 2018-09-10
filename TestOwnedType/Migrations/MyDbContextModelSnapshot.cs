@@ -85,7 +85,9 @@ namespace TestOwnedType.Migrations
 
                             b1.Property<double>("BuyersStampDuty");
 
-                            b1.Property<string>("PropertyType");
+                            b1.Property<int>("PropertyType");
+
+                            b1.Property<DateTime>("SubmitedAt");
 
                             b1.ToTable("PaymentRecords");
 

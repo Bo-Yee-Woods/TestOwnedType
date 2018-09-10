@@ -1,11 +1,12 @@
 ﻿using Newtonsoft.Json;
+using TestOwnedType.Cases.Three;
 
 namespace TestOwnedType.Models.DTOs
 {
     public class ComputedStampDutyDTO
     {
         [JsonProperty("propertyType")]
-        public string PropertyType { get; set; }
+        public PropertyType PropertyType { get; set; }
 
         [JsonProperty("buyersStampDuty")]
         public double BuyersStampDuty { get; set; }

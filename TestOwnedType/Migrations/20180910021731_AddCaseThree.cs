@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TestOwnedType.Migrations
 {
-    public partial class Initial : Migration
+    public partial class AddCaseThree : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,7 +32,8 @@ namespace TestOwnedType.Migrations
                     CreatedTime = table.Column<DateTime>(nullable: false),
                     UpdatedTime = table.Column<DateTime>(nullable: false),
                     DocumentRefNo = table.Column<string>(nullable: false),
-                    ComputedStampDuty_PropertyType = table.Column<string>(nullable: true),
+                    ComputedStampDuty_PropertyType = table.Column<int>(nullable: false),
+                    ComputedStampDuty_SubmitedAt = table.Column<DateTime>(nullable: false),
                     ComputedStampDuty_BuyersStampDuty = table.Column<double>(nullable: false),
                     ComputedStampDuty_AdditionalBuyersStampDuty = table.Column<double>(nullable: false),
                     TotalAmount = table.Column<double>(nullable: false)

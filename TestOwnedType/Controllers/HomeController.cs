@@ -27,12 +27,13 @@ namespace TestOwnedType.Controllers
         {
             var computedStampDutyValueObject = new ComputedStampDuty(
                     paymentRecordDTO.ComputedStampDuty.PropertyType,
+                    DateTime.UtcNow,
                     paymentRecordDTO.ComputedStampDuty.BuyersStampDuty,
                     paymentRecordDTO.ComputedStampDuty.AdditionalBuyersStampDuty
                 );
 
             var paymentRecordEntity = new PaymentRecordEntity(
-                    paymentRecordDTO.DocumentRefNo, 
+                    paymentRecordDTO.DocumentRefNo,
                     paymentRecordDTO.TotalAmount,
                     computedStampDutyValueObject);
 
