@@ -18,7 +18,7 @@ namespace TestOwnedType.Cases.Three
                 paymentRecordEntity => paymentRecordEntity.ComputedStampDuty,
                 computedStampDuty =>
                 {
-                    // 1. must explicitly declare property the fields are readonly
+                    // 1. must explicitly declare properties if the fields are readonly
                     // otherwise, EF core will ignore them by default
                     computedStampDuty.Property(csd => csd.PropertyType);
                     computedStampDuty.Property(csd => csd.BuyersStampDuty);
@@ -49,7 +49,7 @@ namespace TestOwnedType.Cases.Three
 
         public string DocumentRefNo => _documentRefNo;
 
-        // 2. property of complex type cannot be readonly, not supported yet
+        // 2. property of complex type cannot be readonly, not supported yet        
         public ComputedStampDuty ComputedStampDuty { get; private set; }
     }
 
