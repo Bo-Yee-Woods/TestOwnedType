@@ -75,7 +75,7 @@ namespace TestOwnedType.Cases.Three
             AdditionalBuyersStampDuty = additionalBuyersStampDuty;
         }
 
-        // 5. only scalar property can be readonly
+        // 5. only scalar property can be readonly, including enum and DateTime
         public PropertyType PropertyType { get; }
 
         public DateTime SubmitedAt { get; }
