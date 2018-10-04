@@ -10,9 +10,8 @@ They will be include in the model only when they are explicitly declared in conf
 When configure read only property or field, parameterized constructor is needed. 
 Currently, only scalar property, like string, double, Datetime, enum, can use parameterized constructor during model creation. 
 Complex type cannot do in this way as it is not supported now. 
-Allow related entities to be passed to constructor of aggregate root.  
-Therefore, complex type property cannot be read only.
-Parameterized constructor should be called by convention rather than empty constructor. 
+Allow related entities to be passed to constructor of aggregate root. Therefore, complex type property cannot be read only.
+Moreover, Parameterized constructor should be called by convention rather than empty constructor. 
 However, it is supported only when query data, not supported when configure models. 
 It leads to an embarrassing situation that we should have an empty private constructor in our entities, 
 but must not have it in our value objects. Decide on which constructor to call by convention 
